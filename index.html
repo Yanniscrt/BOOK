@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1f1f1f;
+            color: #fff;
+        }
+        .header {
+            background-image: url('00_image/header.png'); /* Chemin vers votre image */
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            opacity: 1; /* Initial opacity set to 1 */
+            animation: fadeIn 2s ease-in-out forwards; /* Animation for fading in */
+            position: fixed; /* Positionnement fixe pour maintenir le menu en place lors du défilement */
+            width: 100%; /* Largeur pleine de l'écran */
+            z-index: 1000; /* Valeur de z-index élevée pour que le menu soit au-dessus de l'image */
+        }
+        .header-content {
+            display: flex;
+            justify-content: flex-start; /* Alignement à gauche */
+            align-items: flex-end; /* Texte aligné en bas */
+            height: auto; /* Hauteur automatique pour s'adapter au contenu */
+            padding: 20px;
+        }
+        .header-content nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header-content nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            position: relative;
+        }
+        .header-content nav ul li:last-child {
+            margin-right: 0;
+        }
+        .header-content nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .header-content nav ul li img {
+            width: 40px; /* Ajustez la taille de l'image selon vos besoins */
+            height: auto;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown2 .dropdown-content2 {
+            display: none; /* Masquer les sous-projets par défaut */
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: 45px; /* Ajustez cette valeur selon vos besoins */
+            background-color: #6a6a6a; /* Ajout du fond gris plus clair */
+            border: 1px solid #ccc; /* Ajout d'une bordure */
+            padding: 10px; /* Ajout de rembourrage */
+            z-index: 2; /* Assurez-vous que les sous-projets apparaissent au-dessus du reste */
+        }
+
+        .dropdown2:hover .dropdown-content2 {
+            display: block; /* Afficher les sous-projets uniquement lorsqu'on survole Projet 2 */
+        }
+        .dropdown-content2 a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content2 a:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .image-section {
+            background-image: url('00_image/chemin_vers_image.jpg'); /* Remplacez 'chemin_vers_image.jpg' par le chemin de votre image */
+            background-size: cover;
+            background-position: center;
+            height: calc(100vh - 50px); /* La hauteur de la fenêtre moins la hauteur du header */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            opacity: 1; /* Initial opacity set to 1 */
+            animation: fadeInContent 2s ease-in-out forwards; /* Animation for fading in */
+            transition: opacity 1s ease-in-out; /* Transition for fading in */
+            z-index: -1; /* Assurez-vous que l'image de fond est en arrière-plan */
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ffc107;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 18px;
+            margin-top: 30px;
+            font-weight: bold;
+            border: 2px solid #ffc107;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: #ffc107;
+        }
+        .btn:active {
+            transform: translateY(2px);
+        }
+        
+        .footer {
+        background-color: #333;
+        background-image: url('footer.png');
+        background-size: cover;
+        color: #fff;
+        padding: -100px 0; /* Réduire le padding pour diminuer la hauteur */
+        text-align: center;
+        font-size: 14px;
+        opacity: 1;
+        animation: fadeInFooter 2s ease-in-out forwards;
+        transition: opacity 1s ease-in-out;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+}
+        }
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0; /* Start with opacity 0 */
+            }
+            to {
+                opacity: 1; /* Fade in to full opacity */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img src="00_image/yfutur.png" alt="accueil"></a></li>
+                    <li class="dropdown">
+                        <a href="creation.html" class="dropbtn">Création</a>
+                        <div class="dropdown-content">
+                            <a href="oddside.html">Oddside</a>
+                            <div class="dropdown2">
+                                <a href="phonotopia.html" class="dropbtn">Phonotopia</a>
+                                <div class="dropdown3">
+                                    <a href="lrdc.html">Les Recettes du Coeur</a>
+                                    <div class="dropdown4">
+                                    <a href="divers.html">Divers</a>
+                                </div>
+                            </div>
+                            <a href="photo.html">Photos</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>      
+        </div>
+    </div>
+    <div class="image-section" id="image-section">
+        <h1 style="margin-bottom: 20px;">Bienvenue sur mon Book</h1>
+        <p style="margin-bottom: 20px;">Cliquez ci dessous
+        <br> si vous voulez découvrir Mes créations et mon cv.</p>
+        <a href="creation.html" class="btn">Accéder aux Créations</a>
+        <a href="00_IMAGE/cv.png" class="btn">Afficher le CV</a>
+    </div>
+    <div class="footer" id="footer">
+        <p>Pour des informations supplémentaires, rendez-vous sur la page contact.
+        <br>Il se peut que certaines fonctionnalités soient encore indisponibles,
+            <br>merci de votre compréhension </p></br>  
+    </div> 
+    
+    </body>
+    </html>

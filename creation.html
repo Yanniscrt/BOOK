@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('00_image/fondcrea.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            position: relative;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        .header {
+            background-image: url('00_image/header.png');
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            opacity: 1;
+            animation: fadeIn 2s ease-in-out forwards; 
+            position: fixed; 
+            width: 100%;
+            z-index: 1000; 
+        }
+        .header-content {
+            display: flex;
+            justify-content: flex-start; 
+            align-items: flex-end; 
+            height: auto;
+            padding: 20px;
+        }
+        .header-content nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header-content nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            position: relative;
+        }
+        .header-content nav ul li:last-child {
+            margin-right: 0;
+        }
+        .header-content nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .header-content nav ul li img {
+            width: 40px;
+            height: auto;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown2 .dropdown-content2 {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: 45px;
+            background-color: #6a6a6a; 
+            border: 1px solid #ccc; 
+            padding: 10px;
+            z-index: 2; 
+        }
+
+        .dropdown2:hover .dropdown-content2 {
+            display: block;
+        }
+        .dropdown-content2 a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content2 a:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .image-section {
+    padding-top: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 100px); 
+        }
+        .bento-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px;
+            padding: 20px;
+            margin: 0 auto; 
+            max-width: 1200px;
+        }
+
+        .bento-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px; 
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .bento-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .bento-box p {
+            margin-bottom: 0;
+        }
+
+        .bento-box:last-child {
+        margin-bottom: 200px;
+    }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ffc107;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 18px;
+            margin-top: 30px;
+            font-weight: bold;
+            border: 2px solid #ffc107;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: #ffc107;
+        }
+        .btn:active {
+            transform: translateY(2px);
+        }
+        .footer {
+            background-color: #333;
+            background-image: url('00_image/footer.png');
+            background-size: cover;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            opacity: 1;
+            animation: fadeInFooter 2s ease-in-out forwards;
+            transition: opacity 1s ease-in-out;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            margin-top: 20px;
+                    }
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img src="00_image/yfutur.png" alt="accueil"></a></li>
+                    <li class="dropdown">
+                        <a href="creation.html" class="dropbtn">Création</a>
+                        <div class="dropdown-content">
+                            <a href="oddside.html">Oddside</a>
+                            <div class="dropdown2">
+                                <a href="phonotopia.html" class="dropbtn">Phonotopia</a>
+                                <div class="dropdown3">
+                                    <a href="lrdc.html">Les Recettes du Coeur</a>
+                                    <div class="dropdown4">
+                                    <a href="divers.html">Divers</a>
+                                </div>
+                            </div>
+                            <a href="photo.html">Photos</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>     
+        </div>
+    </div>
+    <div class="image-section">
+        <div class="bento-container">
+            <div class="bento-box">
+                <h2>ODDSIDE</h2>
+                <p>Présentation de la charte graphique du groupe de musique ODDSIDE.</p>
+                <a href="oddside.html" class="btn">Voir plus</a>
+            </div>
+            <div class="bento-box">
+                <h2>Phonotopia</h2>
+                <p>Projet fictif d'un magasin de vinyl situé à nantes autour du HIP-HOP.</p>
+                <a href="phonotopia.html" class="btn">Voir plus</a>
+            </div>
+            <div class="bento-box">
+                <h2>Les Recettes du Coeur</h2>
+                <p>Projet de BTS pour le stand des Restos du Coeur au SERBOTEL</p>
+                <a href="lrdc.html" class="btn">Voir plus</a>
+            </div>
+            <div class="bento-box">
+                <h2>Divers</h2>
+                <p>Création diverses de projets fictifs et réels que j'ai pu réaliser avec diverses outils.</p>
+                <a href="divers.html" class="btn">Voir plus</a>
+            </div>
+            <div class="bento-box">
+                <h2>Photos</h2>
+                <p>Clichés pris et retouché à travers différent paysage ou événnement.</p>
+                <a href="photo.html" class="btn">Voir plus</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <p>Pour des informations supplémentaires, rendez-vous sur la page contact.
+        <br>Il se peut que certaines fonctionnalités soient encore indisponibles,
+            <br>merci de votre compréhension </p></br>  
+    </div>   
+    </body>
+    </html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('00_image/fonddivers.png'); /* Ajoutez votre image de fond */
+            background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le corps */
+            background-repeat: no-repeat; /* Empêche la répétition de l'image de fond */
+            background-position: center; /* Centre l'image sur l'arrière-plan */
+            background-attachment: fixed; /* Fixe l'image de fond par rapport à la fenêtre du navigateur */
+            color: #fff;
+            position: relative;
+            min-height: 100vh;
+        }
+        .header {
+            background-image: url('00_image/header.png');
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            opacity: 1;
+            animation: fadeIn 2s ease-in-out forwards;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header-content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            height: auto;
+            padding: 20px;
+        }
+        .header-content nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .header-content nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            position: relative;
+        }
+        .header-content nav ul li:last-child {
+            margin-right: 0;
+        }
+        .header-content nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .header-content nav ul li img {
+            width: 40px;
+            height: auto;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown2 .dropdown-content2 {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            margin-top: 45px;
+            background-color: #6a6a6a;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 2;
+        }
+        .dropdown2:hover .dropdown-content2 {
+            display: block;
+        }
+        .dropdown-content2 a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content2 a:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .image-section {
+    padding-top: 300px; /* Réduisez la valeur pour ajuster la hauteur de l'espace au-dessus des images */
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Nombre variable de colonnes en fonction de la taille de l'écran */
+    gap: 20px;
+    min-height: calc(100vh - 100px);
+    padding: 300px; /* Déplacez le padding ici pour un espacement intérieur uniforme */
+    margin: 0 auto; /* Centrer les colonnes horizontalement */
+    max-width: 1200px; /* Largeur maximale pour les colonnes d'images */
+    margin-bottom: 0; /* Retirez la marge basse pour éviter l'espacement supplémentaire */
+}
+
+
+        .bento-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            flex: 1;
+        }
+        .bento-box img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .footer {
+        background-color: #333;
+        background-image: url('footer.png');
+        background-size: cover;
+        color: #fff;
+        padding: -100px 0; /* Réduire le padding pour diminuer la hauteur */
+        text-align: center;
+        font-size: 14px;
+        opacity: 1;
+        animation: fadeInFooter 2s ease-in-out forwards;
+        transition: opacity 1s ease-in-out;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+}
+
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Style pour la croix */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 20px;
+            z-index: 10000;
+        }
+        .close-button:hover {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img src="00_image/yfutur.png" alt="accueil"></a></li>
+                    <li class="dropdown">
+                        <a href="creation.html" class="dropbtn">Création</a>
+                        <div class="dropdown-content">
+                            <a href="oddside.html">Oddside</a>
+                            <div class="dropdown2">
+                                <a href="phonotopia.html" class="dropbtn">Phonotopia</a>
+                                <div class="dropdown3">
+                                    <a href="lrdc.html">Les Recettes du Coeur</a>
+                                    <div class="dropdown4">
+                                    <a href="divers.html">Divers</a>
+                                </div>
+                            </div>
+                            <a href="photo.html">Photos</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>               
+        </div>
+    </div>
+    <div class="image-section">
+        <!-- Première rangée d'images -->
+        <div class="bento-box">
+            <img src="00_image/book_1_Page_1.png" alt="Image 1" class="fullscreen-img">
+        </div>
+        <div class="bento-box">
+            <img src="00_image/book_1_Page_2.png" alt="Image 2" class="fullscreen-img">
+        </div>
+        <div class="bento-box">
+            <img src="00_image/book_1_Page_3.png" alt="Image 3" class="fullscreen-img">
+        </div>
+        <!-- Deuxième rangée d'images -->
+        <div class="bento-box">
+            <img src="00_image/book_1_Page_4.png" alt="Image 4" class="fullscreen-img">
+        </div>
+        <div class="bento-box">
+            <img src="00_image/book_1_Page_5.png" alt="Image 5" class="fullscreen-img">
+        </div>
+        <div class="bento-box">
+            <img src="00_image/book_1_Page_6.png" alt="Image 6" class="fullscreen-img">
+        </div>
+        <!-- Troisième rangée d'images -->
+        <div class="bento-box">
+            <img src="00_image/book_1_Page_7.png" alt="Image 7" class="fullscreen-img">
+        </div>
+        <div class="bento-box">
+            <img src="00_image/book_1_Page_8.png" alt="Image 8" class="fullscreen-img">
+        </div>
+        <div class="bento-box">
+            <img src="00_image/book_1_Page_9.png" alt="Image 9" class="fullscreen-img">
+        </div>
+    </div>
+
+    <div class="footer" id="footer">
+        <p>Pour des informations supplémentaires, rendez-vous sur la page contact.
+        <br>Il se peut que certaines fonctionnalités soient encore indisponibles,
+            <br>merci de votre compréhension </p></br>  
+    </div>  
+
+    <script>
+        // Sélectionnez toutes les images avec la classe "fullscreen-img"
+        const images = document.querySelectorAll('.fullscreen-img');
+        let currentIndex = 0;
+
+        // Ajoutez un gestionnaire d'événements de clic à chaque image
+        images.forEach((image, index) => {
+            image.addEventListener('click', () => {
+                currentIndex = index;
+                displayImage(currentIndex);
+            });
+        });
+
+        // Fonction pour afficher l'image agrandie
+        function displayImage(index) {
+            // Vérifie s'il y a déjà une image agrandie affichée
+            const existingEnlargedImage = document.querySelector('.enlarged-image');
+            if (existingEnlargedImage) {
+                document.body.removeChild(existingEnlargedImage);
+            }
+
+            // Créez une nouvelle balise d'image pour afficher l'image en grand
+            const enlargedImage = document.createElement('img');
+            enlargedImage.src = images[index].src;
+            enlargedImage.alt = images[index].alt;
+            enlargedImage.className = 'enlarged-image'; // Ajoute une classe pour faciliter la sélection
+
+            // Créer une croix pour fermer l'image agrandie
+            const closeButton = document.createElement('span');
+            closeButton.innerHTML = '&times;';
+            closeButton.className = 'close-button';
+
+            // Ajoutez un gestionnaire d'événements de clic pour fermer l'image agrandie
+            closeButton.addEventListener('click', () => {
+                document.body.removeChild(enlargedImage);
+                document.body.removeChild(closeButton);
+            });
+
+            // Stylez la croix pour qu'elle soit en haut à droite
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '10px';
+            closeButton.style.right = '10px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.style.color = '#fff';
+            closeButton.style.fontSize = '20px';
+            closeButton.style.zIndex = '10000';
+
+            // Stylez l'image agrandie
+            enlargedImage.style.position = 'fixed';
+            enlargedImage.style.top = '0';
+            enlargedImage.style.left = '0';
+            enlargedImage.style.width = '100%';
+            enlargedImage.style.height = '100%';
+            enlargedImage.style.objectFit = 'contain';
+            enlargedImage.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            enlargedImage.style.zIndex = '9999';
+            enlargedImage.style.cursor = 'pointer';
+
+            // Ajoutez l'image agrandie au corps du document
+            document.body.appendChild(enlargedImage);
+            document.body.appendChild(closeButton);
+
+            // Ajoutez un gestionnaire d'événements de clic pour la navigation entre les images
+            document.addEventListener('keydown', handleKeyPress);
+        }
+
+        // Fonction pour gérer la navigation entre les images avec les touches gauche et droite
+        function handleKeyPress(event) {
+            if (event.key === 'ArrowLeft') {
+                currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+                displayImage(currentIndex);
+            } else if (event.key === 'ArrowRight') {
+                currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+                displayImage(currentIndex);
+            }
+        }
+    </script>
+</body>
+</html>
