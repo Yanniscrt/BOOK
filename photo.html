@@ -323,7 +323,6 @@
         });
 
         function displayImage(index) {
-            // Vérifie s'il y a déjà une image agrandie affichée
             const existingEnlargedImage = document.querySelector('.enlarged-image');
             if (existingEnlargedImage) {
                 document.body.removeChild(existingEnlargedImage);
@@ -332,7 +331,7 @@
             const enlargedImage = document.createElement('img');
             enlargedImage.src = images[index].src;
             enlargedImage.alt = images[index].alt;
-            enlargedImage.className = 'enlarged-image'; // Ajoute une classe pour faciliter la sélection
+            enlargedImage.className = 'enlarged-image'; 
 
             const closeButton = document.createElement('span');
             closeButton.innerHTML = '&times;';
