@@ -9,11 +9,11 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('00_image/fonddivers.png');
-            background-size: cover; 
-            background-repeat: no-repeat;
-            background-position: center; 
-            background-attachment: fixed; 
+            background-image: url('00_image/fonddivers.png'); /* Ajoutez votre image de fond */
+            background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le corps */
+            background-repeat: no-repeat; /* Empêche la répétition de l'image de fond */
+            background-position: center; /* Centre l'image sur l'arrière-plan */
+            background-attachment: fixed; /* Fixe l'image de fond par rapport à la fenêtre du navigateur */
             color: #fff;
             position: relative;
             min-height: 100vh;
@@ -103,16 +103,16 @@
             color: #000;
         }
         .image-section {
-    padding-top: 300px;
+    padding-top: 300px; /* Réduisez la valeur pour ajuster la hauteur de l'espace au-dessus des images */
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Nombre variable de colonnes en fonction de la taille de l'écran */
     gap: 20px;
     min-height: calc(100vh - 100px);
-    padding: 300px; 
-    margin: 0 auto;
-    max-width: 1200px; 
-    margin-bottom: 0; 
+    padding: 300px; /* Déplacez le padding ici pour un espacement intérieur uniforme */
+    margin: 0 auto; /* Centrer les colonnes horizontalement */
+    max-width: 1200px; /* Largeur maximale pour les colonnes d'images */
+    margin-bottom: 0; /* Retirez la marge basse pour éviter l'espacement supplémentaire */
 }
 
 
@@ -134,7 +134,7 @@
         background-image: url('footer.png');
         background-size: cover;
         color: #fff;
-        padding: -100px 0;
+        padding: -100px 0; /* Réduire le padding pour diminuer la hauteur */
         text-align: center;
         font-size: 14px;
         opacity: 1;
@@ -182,6 +182,8 @@
                             <div class="dropdown2">
                                 <a href="phonotopia.html" class="dropbtn">Phonotopia</a>
                                 <div class="dropdown3">
+                                    <a href="lrdc.html">Les Recettes du Coeur</a>
+                                    <div class="dropdown4">
                                     <a href="divers.html">Divers</a>
                                 </div>
                             </div>
@@ -194,6 +196,7 @@
         </div>
     </div>
     <div class="image-section">
+        <!-- Première rangée d'images -->
         <div class="bento-box">
             <img src="00_image/book_1_Page_1.png" alt="Image 1" class="fullscreen-img">
         </div>
@@ -203,6 +206,7 @@
         <div class="bento-box">
             <img src="00_image/book_1_Page_3.png" alt="Image 3" class="fullscreen-img">
         </div>
+        <!-- Deuxième rangée d'images -->
         <div class="bento-box">
             <img src="00_image/book_1_Page_4.png" alt="Image 4" class="fullscreen-img">
         </div>
@@ -212,6 +216,7 @@
         <div class="bento-box">
             <img src="00_image/book_1_Page_6.png" alt="Image 6" class="fullscreen-img">
         </div>
+        <!-- Troisième rangée d'images -->
         <div class="bento-box">
             <img src="00_image/book_1_Page_7.png" alt="Image 7" class="fullscreen-img">
         </div>
@@ -230,9 +235,11 @@
     </div>  
 
     <script>
+        // Sélectionnez toutes les images avec la classe "fullscreen-img"
         const images = document.querySelectorAll('.fullscreen-img');
         let currentIndex = 0;
 
+        // Ajoutez un gestionnaire d'événements de clic à chaque image
         images.forEach((image, index) => {
             image.addEventListener('click', () => {
                 currentIndex = index;
@@ -240,26 +247,32 @@
             });
         });
 
+        // Fonction pour afficher l'image agrandie
         function displayImage(index) {
+            // Vérifie s'il y a déjà une image agrandie affichée
             const existingEnlargedImage = document.querySelector('.enlarged-image');
             if (existingEnlargedImage) {
                 document.body.removeChild(existingEnlargedImage);
             }
 
+            // Créez une nouvelle balise d'image pour afficher l'image en grand
             const enlargedImage = document.createElement('img');
             enlargedImage.src = images[index].src;
             enlargedImage.alt = images[index].alt;
-            enlargedImage.className = 'enlarged-image'; 
+            enlargedImage.className = 'enlarged-image'; // Ajoute une classe pour faciliter la sélection
 
+            // Créer une croix pour fermer l'image agrandie
             const closeButton = document.createElement('span');
             closeButton.innerHTML = '&times;';
             closeButton.className = 'close-button';
 
+            // Ajoutez un gestionnaire d'événements de clic pour fermer l'image agrandie
             closeButton.addEventListener('click', () => {
                 document.body.removeChild(enlargedImage);
                 document.body.removeChild(closeButton);
             });
 
+            // Stylez la croix pour qu'elle soit en haut à droite
             closeButton.style.position = 'absolute';
             closeButton.style.top = '10px';
             closeButton.style.right = '10px';
@@ -268,6 +281,7 @@
             closeButton.style.fontSize = '20px';
             closeButton.style.zIndex = '10000';
 
+            // Stylez l'image agrandie
             enlargedImage.style.position = 'fixed';
             enlargedImage.style.top = '0';
             enlargedImage.style.left = '0';
@@ -278,12 +292,15 @@
             enlargedImage.style.zIndex = '9999';
             enlargedImage.style.cursor = 'pointer';
 
+            // Ajoutez l'image agrandie au corps du document
             document.body.appendChild(enlargedImage);
             document.body.appendChild(closeButton);
 
+            // Ajoutez un gestionnaire d'événements de clic pour la navigation entre les images
             document.addEventListener('keydown', handleKeyPress);
         }
 
+        // Fonction pour gérer la navigation entre les images avec les touches gauche et droite
         function handleKeyPress(event) {
             if (event.key === 'ArrowLeft') {
                 currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
